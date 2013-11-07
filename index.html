@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+      <title>Intro To Dynamic Web Development</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -178,8 +178,42 @@ $ curl www3.uwplatt.edu/index.php
                   </ul>
                </section>
                <section>
-                  <h2>MySQL</h2>
-                  <img src="img/mysql.gif" />
+                  <h2>SQL</h2>
+                  <p>Structured Query Language</p>
+					<pre><code class="sql" style="overflow-x:hidden;" data-trim contenteditable>
+CREATE TABLE BOOKS(
+   title     VARCHAR(256),
+   author    VARCHAR(256),
+   available BIT,
+   ISBN      INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT
+);
+               </code></pre>
+                  <small><p>Tables are used to represent logical entities in a database.</p></small>
+               </section>
+               <section>
+               <h2>Example Queries</h2>
+					<pre><code class="sql" style="overflow-x:hidden;" data-trim contenteditable>
+INSERT INTO BOOKS 
+Values('Harry Potter and the Deathly Hallows',
+       'J.K. Rowling', '1', 2314521);
+               </code></pre>
+					<pre><code class="sql" style="overflow-x:hidden;" data-trim contenteditable>
+SELECT ISBN, title from BOOKS
+WHERE author = 'J.K. Rowling'
+AND available = '1';
+               </code></pre>
+					<pre><code class="sql" style="overflow-x:hidden;" data-trim contenteditable>
+UPDATE BOOKS
+SET available='0'
+WHERE ISBN=2314521;
+               </code></pre>
+					<pre><code class="sql" style="overflow-x:hidden;" data-trim contenteditable>
+DELETE FROM BOOKS
+WHERE title like '%Twilight%';
+               </code></pre>
+					<pre><code class="sql" style="overflow-x:hidden;" data-trim contenteditable>
+DROP TABLE BOOKS;
+               </code></pre>
                </section>
             </section>
 
