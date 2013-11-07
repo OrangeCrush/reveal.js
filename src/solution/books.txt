@@ -1,0 +1,12 @@
+use library;
+INSERT INTO BOOKS VALUES('Harry Potter and the Sorcerer\'s Stone',   'J.K. Rowling', 0 ,0);
+INSERT INTO BOOKS VALUES('Harry Potter and the Chamber of Secrets',  'J.K. Rowling', 0 ,0);
+INSERT INTO BOOKS VALUES('Harry Potter and the Goblet of Fire',      'J.K. Rowling', 0 ,0);
+INSERT INTO BOOKS VALUES('Harry Potter and the Prisoner of Azkaban', 'J.K. Rowling', 0 ,0);
+
+INSERT INTO BOOKS VALUES('The Hobbit', 'J.R.R. Tolkein', 0, 0);
+INSERT INTO BOOKS VALUES('The Lord of the Rings:The Fellowship of the Ring', 'J.R.R. Tolkein', 0, 0);
+INSERT INTO BOOKS VALUES('The Lord of the Rings:The Two Towers', 'J.R.R. Tolkein', 0, 0);
+INSERT INTO BOOKS VALUES('The Lord of the Rings:The Return of the King', 'J.R.R. Tolkein', 0, 0);
+
+INSERT INTO BOOKS VALUES('Twilight', 'Stephanie Meyers', 0,0);
