@@ -6,5 +6,5 @@ November 7th, 2013
 
 
 #### University of Wisconsin Platteville
-- [Home Page](http://www3.uwplatt.edu): Home Page
+- [Home Page](http://www3.uwplatt.edu)
 
