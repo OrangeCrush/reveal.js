@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -50,131 +50,105 @@
                <p>Hypertext Transfer Protocol</p>
 					<pre><code data-trim contenteditable>
 $ telnet 
-telnet> open
+telnet&gt; open
 (to) www3.uwplatt.edu 80
 Trying 137.104.128.151...
 Connected to prod-web.oit.uwplatt.edu.
 Escape character is '^]'.
-GET / HTTP/1.1
+GET /index.php HTTP/1.1
 HOST: www3.uwplatt.edu
                </code></pre>
                <p><small>What happens when we send a raw HTTP request to uwplatt.edu?</small></p>
                </section>
                <section>
-					<pre><code data-trim contenteditable>
-
+                  <h2>200 OK</h2>
+					<pre><code class="http" style="overflow-x:hidden;" data-trim contenteditable>
+HTTP/1.1 200 OK
+Date: Thu, 07 Nov 2013 03:52:32 GMT
+Server: Apache/2.2.22 (Linux/SUSE)
+X-Powered-By: PHP/5.3.15
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Last-Modified: Thu, 07 Nov 2013 03:52:32 +0000
+Cache-Control: no-cache, must-revalidate, post-check=0, pre-check=0
+ETag: "1383796352"
+Content-Language: en
+X-Generator: Drupal 7 (http://drupal.org)
+Link: &lt;http://www3.uwplatt.edu/&gt;; rel="canonical",&lt;http://www3.uwplatt.edu/&gt;; rel="shortlink"
+X-UA-Compatible: IE=Edge,chrome=1
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=utf-8
                </code></pre>
+					<pre><code style="overflow-x:hidden;" data-trim contenteditable>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en" dir="ltr"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" / &gt;
+  ...
+  ...
+               </code></pre>
+               <p>uwplatt.edu responds by running the file index.php and serving us the output!</p>
                   
+               </section>
+
+               <section>
+                  <h2> Programtic HTTP</h2>
+                  <h3>'C'-URL (libcurl)</h3>
+					<pre><code class="bash" style="overflow-x:hidden;" data-trim contenteditable>
+$ curl www3.uwplatt.edu/index.php
+               </code></pre>
+
+					<pre><code class="bash" style="overflow-x:hidden;" data-trim contenteditable>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en" dir="ltr"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" / &gt;
+  ...
+  ...
+               </code></pre>
                </section>
 
 				</section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+
 
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
+               <section>
+                  <h1>Server-Side Programming</h1>
+                  <!--
+                  <img style="max-width:100px;"src="img/python.png"/>
+                  <img style="max-width:100px;"src="img/php.png"/>
+                  <img style="max-width:100px;"src="img/node.png"/><br>
+                  <img style="max-width:100px;"src="img/java.jpg"/>
+                  <img style="max-width:100px;"src="img/asp.gif"/>
+                  <img style="max-width:100px;"src="img/erlang.png"/>
+                  -->
+                  <ul style="margin-right:75px;">
+                     <li>Ruby</li>
+                     <li>Python</li>
+                     <li>PHP</li>
+                     <li>node.js</li>
+                  </ul>
+                  <ul>
+                     <li>Java</li>
+                     <li>Scala</li>
+                     <li>ASP.net</li>
+                     <li>erlang</li>
+                  </ul>
+                  <br>
+                  <br>
+                  <small><a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html">TIOBE language usage statistics</a></small>
+                  <br><small>Great variety to pick from!</small>
+               </section>
+               <section>
+                  <h3>What kind of server to use?</h3>
+                  <p>95.2% of all web servers are running some variation of Linux!</p>
+                  <img src="img/tux.png" />
+                  <br><a href="http://www.ubuntu.com/">Ubuntu</a> |
+                  <a href="http://fedoraproject.org/">fedora</a> |
+                  <a href="http://www.linuxmint.com/">linuxmint</a>
+              </section>
 				</section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
 
 				<section id="themes">
 					<h2>Themes</h2>
