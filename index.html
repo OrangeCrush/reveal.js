@@ -195,17 +195,17 @@ CREATE TABLE BOOKS(
 					<pre><code class="sql" style="overflow-x:hidden;" data-trim contenteditable>
 INSERT INTO BOOKS 
 Values('Harry Potter and the Deathly Hallows',
-       'J.K. Rowling', '1', 0);
+       'J.K. Rowling', 1, 0);
                </code></pre>
 					<pre><code class="sql" style="overflow-x:hidden;" data-trim contenteditable>
 SELECT ISBN, title from BOOKS
 WHERE author = 'J.K. Rowling'
-AND available = '1';
+AND available = 1;
                </code></pre>
 					<pre><code class="sql" style="overflow-x:hidden;" data-trim contenteditable>
 UPDATE BOOKS
-SET available='0'
-WHERE ISBN=2314521;
+SET available=0
+WHERE ISBN=0;
                </code></pre>
 					<pre><code class="sql" style="overflow-x:hidden;" data-trim contenteditable>
 DELETE FROM BOOKS
