@@ -1,0 +1,11 @@
+.memoryTable table,
+.memoryTable td,
+.memoryTable tr,
+.memoryTable th{
+   border-width:1px;
+   border-style:solid;
+}
+
+.memoryTable{
+   padding-top:75px !important;
+}
